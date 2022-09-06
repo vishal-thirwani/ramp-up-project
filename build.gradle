@@ -1,0 +1,50 @@
+plugins {
+    id 'application'
+
+
+}
+
+repositories {
+    mavenCentral()
+}
+
+
+
+dependencies {
+
+    implementation 'io.dropwizard:dropwizard-core:2.1.0'
+    implementation 'mysql:mysql-connector-java:8.0.30'
+
+
+    implementation 'io.dropwizard:dropwizard-migrations:2.1.0'
+    implementation 'io.dropwizard:dropwizard-db:2.1.0'
+    implementation 'io.dropwizard:dropwizard-hibernate:2.1.0'
+    implementation 'io.dropwizard:dropwizard-testing:2.1.0'
+    implementation 'org.projectlombok:lombok:1.18.24'
+    testImplementation 'org.junit.jupiter:junit-jupiter-api:5.8.2'
+    testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine:5.8.2'
+
+
+
+     implementation 'org.assertj:assertj-core:3.23.1'
+    implementation 'org.mockito:mockito-core:4.6.1'
+    compileOnly 'org.projectlombok:lombok:1.18.24'
+    annotationProcessor 'org.projectlombok:lombok:1.18.24'
+
+}
+
+application {
+    mainClass = 'App'
+}
+
+java{
+    sourceCompatibility = JavaVersion.VERSION_1_8
+    targetCompatibility = JavaVersion.VERSION_1_8
+}
+
+test{
+    useJUnitPlatform()
+}
+run{
+    args = ['server','Config.yml']
+}
